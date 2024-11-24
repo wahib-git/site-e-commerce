@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la Commande</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Détails de la Commande</h2>
+    <div class="card">
+        <div class="card-body">
+            <p><strong>Référence :</strong> <span th:text="${order.ref}"></span></p>
+            <p><strong>Client :</strong> <span th:text="${order.customer}"></span></p>
+            <p><strong>Prix :</strong> <span th:text="${order.price}"></span></p>
+            <p><strong>Date :</strong> <span th:text="${order.date}"></span></p>
+        </div>
+    </div>
+    <a href="/allOrders" class="btn btn-secondary mt-3">Retour à la liste</a>
+</div>
+</body>
+</html>

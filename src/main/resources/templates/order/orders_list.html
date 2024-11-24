@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Commandes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Liste des Commandes</h2>
+    <a href="/addOrder" class="btn btn-success mb-3">Ajouter une Commande</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Référence</th>
+            <th>Client</th>
+            <th>Prix</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.ref}"></td>
+            <td th:text="${order.customer}"></td>
+            <td th:text="${order.price}"></td>
+            <td th:text="${order.date}"></td>
+            <td>
+                <a th:href="@{/order/{id}(id=${order.id})}" class="btn btn-info">Détails</a>
+                <a th:href="@{/editOrder/{id}(id=${order.id})}" class="btn btn-warning">Modifier</a>
+                <a th:href="@{/deleteOrder/{id}(id=${order.id})}" class="btn btn-danger"
+                   onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette commande ?')">Supprimer</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

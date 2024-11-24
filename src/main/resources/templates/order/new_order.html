@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une Commande</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Ajouter une Nouvelle Commande</h2>
+    <form th:action="/save_order" th:object="${orderForm}" method="post">
+        <div class="orderForm">
+            <label for="ref">Référence</label>
+            <input type="text" class="orderForm" id="ref" th:field="*{ref}" required>
+        </div>
+        <div class="orderForm">
+            <label for="customer">Client</label>
+            <input type="text" class="orderForm" id="customer" th:field="*{customer}" required>
+        </div>
+        <div class="orderForm">
+            <label for="price">Prix</label>
+            <input type="number" class="orderForm" id="price" th:field="*{price}" step="0.01" required>
+        </div>
+        <div class="orderForm">
+            <label for="date">Date</label>
+            <input type="date" class="orderForm" id="date" th:field="*{date}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du Client</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Détails du Client</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>ID :</strong> <span th:text="${customer.id}"></span></li>
+        <li class="list-group-item"><strong>Nom :</strong> <span th:text="${customer.name}"></span></li>
+        <li class="list-group-item"><strong>Email :</strong> <span th:text="${customer.email}"></span></li>
+        <li class="list-group-item"><strong>Téléphone :</strong> <span th:text="${customer.phone}"></span></li>
+    </ul>
+    <a href="/customers/all" class="btn btn-primary mt-3">Retour à la liste</a>
+</div>
+</body>
+</html>

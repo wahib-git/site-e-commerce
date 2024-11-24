@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier la Commande</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Modifier la Commande</h2>
+    <form th:action="@{/updateOrder/{id}(id=${orderForm.id})}" method="post">
+        <div class="orderForm">
+            <label for="ref">Référence</label>
+            <input type="text" class="orderForm" id="ref" name="ref" th:value="${orderForm.ref}" required>
+        </div>
+        <div class="orderForm">
+            <label for="customer">Client</label>
+            <input type="text" class="orderForm" id="customer" name="customer" th:value="${orderForm.customer}" required>
+        </div>
+        <div class="orderForm">
+            <label for="price">Prix</label>
+            <input type="number" class="orderForm" id="price" name="price" th:value="${orderForm.price}" step="0.01" required>
+        </div>
+        <div class="orderForm">
+            <label for="date">Date</label>
+            <input type="date" class="orderForm" id="date" name="date" th:value="${orderForm.date}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        <a href="/allOrders" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+</body>
+</html>

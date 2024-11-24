@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un Client</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Ajouter un nouveau Client</h2>
+    <form action="/customers/save" method="post">
+        <div class="customerForm">
+            <label for="name">Nom</label>
+            <input type="text" class="customerForm" id="name" name="name" required>
+        </div>
+        <div class="customerForm">
+            <label for="email">Email</label>
+            <input type="email" class="customerForm" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="text" class="customerForm" id="phone" name="phone" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
+</body>
+</html>
